@@ -1,0 +1,18 @@
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "nextflow-pvc"
+  },
+  "spec": {
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "storageClassName": "efs",
+    "resources": {
+      "requests": {
+        "storage": "1Gi"
+      }
+    }
+  }
+}
