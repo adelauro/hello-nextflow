@@ -2,7 +2,7 @@ gen = Channel.from(1..10)
 
 
 process transform1 {
-        container 'busybox:latest'
+        container 'ubuntu:latest'
 	input:
 		val x from gen 
 	output:
@@ -15,17 +15,5 @@ process transform1 {
 
 transformed1.into{consolidate1; twotransform}
 
-consolidate1.collectFile(name: "$HOME/consolidate1.txt",  newLine: false)
-
-
-process transform2 {
-    input:
-        path x from twotransform 
-    output: 
-        stdout into out
-    script:
-        """
-        cat $x 
-        """
-}
+consolidate1.collectFile(name: "consolidate1.txt",  newLine: false)
 
