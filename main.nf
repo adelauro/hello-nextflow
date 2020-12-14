@@ -14,7 +14,7 @@ process transform1 {
 
 transformed1.into{consolidate1; twotransform}
 
-consolidate1.collectFile(name: "~/consolidate1.txt",  newLine: false)
+consolidate1.collectFile(name: "/consolidate1.txt",  newLine: false)
 
 
 process transform2 {
