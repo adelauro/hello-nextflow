@@ -2,7 +2,6 @@ gen = Channel.from(1..10)
 
 
 process transform1 {
-	container 'busybox:latest'
 	input:
 		val x from gen 
 	output:
@@ -19,6 +18,7 @@ consolidate1.collectFile(name: "/consolidate1.txt",  newLine: false)
 
 
 process transform2 {
+    container 'busybox:latest'
     input:
         path x from twotransform 
     output: 
